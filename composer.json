@@ -12,7 +12,7 @@
             "email": "support@kunstmaan.be"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
@@ -29,8 +29,15 @@
         "incenteev/composer-parameter-handler": "2.0.*",
         "kunstmaan/admin-bundle": "2.3.*",
         "kunstmaan/adminlist-bundle": "2.3.*",
-        "phpunit/phpunit": "*",
-        "nelmio/alice": "1.4.*@dev"
+        "phpunit/phpunit": "*"
+    },
+    "require-dev": {
+        "doctrine/data-fixtures": "1.0.*@dev",
+        "doctrine/doctrine-fixtures-bundle": "2.1.*@dev",
+        "nelmio/alice": "1.4.*@dev",
+        "friendsofsymfony/user-bundle": "dev-master",
+        "white-october/pagerfanta-bundle": "dev-master",
+        "pagerfanta/pagerfanta": "dev-master"
     },
     "autoload": {
         "psr-0": { "Kunstmaan\\TranslatorBundle": "" }

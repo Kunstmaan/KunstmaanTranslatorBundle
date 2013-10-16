@@ -36,15 +36,41 @@ KunstmaanTranslatorBundle:
         _locale: %requiredlocales%
 ```
 
-Overwrite the KunstmaanTranslatorBundle config to your needs in config.yml:
+Configuration
+---
+
+Overwrite the KunstmaanTranslatorBundle config to your needs in config.yml, these are the default values:
 
 ```PHP
 kunstmaan_translator:
-    enabled: true
-    managed_locales: ['nl','en','de']
+	enabled: 			true
+	default_bundle: 	kunstmaantranslatorbundle
+	cache_dir: 			%kernel.cache_dir%/translations
+	managed_locales:	[]
+	file_formats:		['yml', 'xliff']
+	
 ```
 
-Update your database schema
+* ```enabled``` : Enabled or disable the KunstmaanTranslatorBundle
+* ```default_bundle``` : Default bundle used for the import from within the backend (not case-sensitive)
+* ```cache_dir```: Cached translations dir
+* ```managed_locales```: Which locale translation files should be imported
+* ```file_formats```: Which type of translation files should be imported
+
+Example configuration:
+
+```PHP
+kunstmaan_translator:
+	default_bundle: 	AwesomeSuperCoolWebsiteBundle
+	managed_locales:	['en', 'fr', 'es']
+
+```
+
+Database schema
+---
+
+Update your database schema with doctrine
+
 ```php
 app/console doctrine:schema:update --force
 
