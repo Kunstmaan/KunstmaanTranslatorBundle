@@ -1,0 +1,14 @@
+KunstmaanTranslatorBundle_translations_commands:
+    resource: "@KunstmaanTranslatorBundle/Controller/TranslatorCommandController.php"
+    type:     annotation
+    prefix:   /admin/settings/translations
+
+KunstmaanTranslatorBundle_translations:
+    resource: "@KunstmaanTranslatorBundle/Controller/TranslatorGeneralController.php"
+    type:     annotation
+    prefix:   /admin/settings/translations
+
+
+KunstmaanTranslatorBundle_settings_translations_add:
+    pattern:   /add/{domain}/{locale}/{keyword}
+    defaults:  { _controller: KunstmaanTranslatorBundle:TranslatorGeneral:add, domain: '', locale:'%locale%', keyword: '' }

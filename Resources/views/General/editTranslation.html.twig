@@ -1,0 +1,13 @@
+{% extends 'KunstmaanTranslatorBundle::Default/generalLayout.html.twig' %}
+
+{% block content %}
+    <form class="form-horizontal" action="{{ path(app.request.attributes.get('_route'),
+        app.request.attributes.get('_route_params')) }}" method="post" {{ form_enctype(form) }} novalidate>
+        <fieldset>
+            {{ form_rest(form) }}
+            <div class="form-actions">
+                <button class="btn btn-primary" type="submit">{{ 'settings.translator.edit' | trans }}</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

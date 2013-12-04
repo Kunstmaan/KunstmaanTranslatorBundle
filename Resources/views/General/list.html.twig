@@ -1,0 +1,44 @@
+{% extends 'KunstmaanTranslatorBundle::Default/generalLayout.html.twig' %}
+
+{% block content %}
+    <ul>
+        <li>
+            <a href="{{ path("KunstmaanTranslatorBundle_settings_translations_add") }}">{{ 'settings.translator.add' | trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path('KunstmaanTranslatorBundle_command_clear_cache') }}">{{ 'settings.translator.refresh_live' | trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path('KunstmaanTranslatorBundle_command_import') }}" >{{ 'settings.translator.import_translations' | trans }}</a>
+        </li>
+        <li>
+            <a href="{{ path('KunstmaanTranslatorBundle_command_import_forced') }}" >{{ 'settings.translator.import_translations_forced' | trans }}</a>
+        </li>
+    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Domain</th>
+                <th>Keyword</th>
+                <th>Locale</th>
+                <th>Text</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for translation in translations %}
+                <tr>
+                    <td>{{ translation.domain }}</td>
+                    <td>{{ translation.keyword }}</td>
+                    <td>{{ translation.locale }}</td>
+                    <td>{{ translation.text }}</td>
+                    <td>
+                        <a href="{{ path("KunstmaanTranslatorBundle_settings_translations_edit", {"id": translation.id }) }}">Edit</a>
+                        <a href="{{ path("KunstmaanTranslatorBundle_settings_translations_delete", {"id": translation.id }) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
