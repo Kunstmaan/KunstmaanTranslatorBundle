@@ -39,12 +39,11 @@ class KunstmaanTranslatorExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('repositories.yml');
-        //$loader->load('validators.yml');
 
         $this->setTranslationConfiguration($config, $container);
     }
 
-    public function setTranslationConfiguration($config, $container)
+    public function setTranslationConfiguration($config, ContainerBuilder $container)
     {
         $container->setAlias('translator', 'kunstmaan_translator.service.translator.translator');
         $translator = $container->getDefinition('kunstmaan_translator.service.translator.translator');
@@ -55,7 +54,7 @@ class KunstmaanTranslatorExtension extends Extension
 
         $translator->addMethodCall('setFallbackLocales', array(array('en')));
 
-        if($container->hasParameter('defaultlocale')) {
+        if ($container->hasParameter('defaultlocale')) {
             $translator->addMethodCall('setFallbackLocales', array(array($container->getParameter('defaultlocale'))));
         }
 
@@ -69,7 +68,7 @@ class KunstmaanTranslatorExtension extends Extension
      * $this->registerTranslatorConfiguration($config['translator'], $container);
      * Used to load all other translation files
      */
-    public function registerTranslatorConfiguration($config, $container)
+    public function registerTranslatorConfiguration($config, ContainerBuilder $container)
     {
         $translator = $container->getDefinition('kunstmaan_translator.service.translator.translator');
 

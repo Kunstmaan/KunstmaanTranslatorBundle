@@ -102,7 +102,7 @@ class ExportFile
         $this->content = $content;
     }
 
-    public function addTranslation($translation)
+    public function addTranslation(\Kunstmaan\TranslatorBundle\Entity\Translation $translation)
     {
         $this->translations->set($translation->getKeyword(), $translation->getText());
     }

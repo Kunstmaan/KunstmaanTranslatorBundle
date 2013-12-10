@@ -67,7 +67,7 @@ class TranslationGroup
         return is_null($translation) ? null : $translation->getText();
     }
 
-    public function addTranslation(Translation $translation)
+    public function addTranslation(\Kunstmaan\TranslatorBundle\Model\Translation\Translation $translation)
     {
         $this->translations->add($translation);
     }

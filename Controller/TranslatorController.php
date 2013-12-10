@@ -24,7 +24,6 @@ class TranslatorController extends AdminListController
      */
     private $adminListConfigurator;
 
-
     /**
      * @Route("/", name="KunstmaanTranslatorBundle_settings_translations")
      * @Template("KunstmaanTranslatorBundle:Translator:list.html.twig")
@@ -41,7 +40,7 @@ class TranslatorController extends AdminListController
         $cacheFresh = $this->get('kunstmaan_translator.service.translator.cache_validator')->isCacheFresh();
         $debugMode = $this->container->getParameter('kernel.debug') === true;
 
-        if(!$cacheFresh && !$debugMode) {
+        if (!$cacheFresh && !$debugMode) {
             $noticeText = $this->get('translator')->trans('settings.translator.not_live_warning');
             $this->get('session')->getFlashBag()->add('notice', $noticeText);
         }
@@ -79,7 +78,6 @@ class TranslatorController extends AdminListController
         $form->add('domain','text');
         $form->add('keyword','text');
 
-
         if ('POST' == $request->getMethod()) {
             $form->bind($request);
             if ($form->isValid()) {
@@ -89,6 +87,7 @@ class TranslatorController extends AdminListController
                 $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('settings.translator.succesful_added'));
 
                 $indexUrl = $configurator->getIndexUrl();
+
                 return new RedirectResponse($this->generateUrl($indexUrl['path'], isset($indexUrl['params']) ? $indexUrl['params'] : array()));
             }
         }
@@ -130,6 +129,7 @@ class TranslatorController extends AdminListController
                 $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('settings.translator.succesful_edited'));
 
                 $indexUrl = $configurator->getIndexUrl();
+
                 return new RedirectResponse($this->generateUrl($indexUrl['path'], isset($indexUrl['params']) ? $indexUrl['params'] : array()));
             }
         }
@@ -152,10 +152,12 @@ class TranslatorController extends AdminListController
 
         if ($translation == null) {
             $addUrl = $configurator->getAddUrlFor(array('domain' => $domain, 'keyword' => $keyword, 'locale' => $locale));
+
             return new RedirectResponse($this->generateUrl($addUrl['path'], $addUrl['params']));
         }
 
         $editUrl = $configurator->getEditUrlFor(array('id' => $translation->getId()));
+
         return new RedirectResponse($this->generateUrl($editUrl['path'], $editUrl['params']));
     }
 
