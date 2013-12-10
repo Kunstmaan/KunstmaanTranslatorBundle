@@ -172,7 +172,7 @@ class TranslatorController extends AdminListController
         return parent::doDeleteAction($this->getAdminListConfigurator(), $id);
     }
 
-    public function setAdminListConfigurator($adminListConfigurator)
+    private function setAdminListConfigurator($adminListConfigurator)
     {
         $this->adminListConfigurator = $adminListConfigurator;
     }
@@ -180,7 +180,7 @@ class TranslatorController extends AdminListController
     /**
      * @return AbstractAdminListConfigurator
      */
-    public function getAdminListConfigurator()
+    private function getAdminListConfigurator()
     {
         if (!isset($this->adminListConfigurator)) {
             $this->adminListConfigurator = new TranslationAdminListConfigurator($this->getDoctrine()->getManager());
