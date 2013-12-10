@@ -92,34 +92,6 @@ class TranslationGroupManager
         return $translationGroup;
     }
 
-    public function getTranslationGroupsByDomain($domain)
-    {
-        $domain = $this->translationRepository->findOneBy(array('name' => $domain));
-
-        if (! $translationDomain instanceof TranslationDomain) {
-            return array();
-        }
-
-        $translationGroups = new ArrayCollection;
-
-        $translations =  $this->translationRepository->findBy(array('domain' => $translationDomain));
-
-        foreach ($translations as $translation) {
-            $key = $translation->getKeyword();
-
-            if (!$translationGroups->containsKey($key)) {
-                $translationGroup = new TranslationGroup;
-                $translationGroup->setDomain($domain);
-                $translationGroup->setKeyword($translation->getKeyword());
-                $translationGroups->set($key, $translationGroup);
-            }
-
-            $translationGroups->get($key)->addTranslation($translation);
-        }
-
-        return $translationGroups;
-    }
-
     public function setTranslationRepository($translationRepository)
     {
         $this->translationRepository = $translationRepository;

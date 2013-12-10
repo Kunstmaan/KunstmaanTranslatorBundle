@@ -93,7 +93,7 @@ class Translator extends SymfonyTranslator
     {
 
         $showTranslationsSource = $this->container->get('request')->get('transSource');
-        if($showTranslationsSource !== null) {
+        if ($showTranslationsSource !== null) {
             $trans =  sprintf('%s (%s)', $id, $domain);
         } else {
             $trans = parent::trans($id, $parameters, $domain, $locale);
@@ -148,6 +148,5 @@ class Translator extends SymfonyTranslator
     {
         $this->resourceCacher = $resourceCacher;
     }
-
 
 }

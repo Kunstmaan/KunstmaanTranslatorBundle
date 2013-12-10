@@ -19,18 +19,17 @@ class MigrationsService
         $inserts = $this->getNewTranslationSql();
         $updates = $this->getUpdatedTranslationSqlArray();
 
-        if($inserts != '' && !is_null($inserts)) {
+        if ($inserts != '' && !is_null($inserts)) {
             $sql[] = $inserts;
         }
 
-        if(count($updates) > 0 && is_array($updates)) {
+        if (count($updates) > 0 && is_array($updates)) {
             $sql = array_merge($sql, $updates);
         }
 
         return $sql;
     }
 
-    // FIXME: needs refactoring
     public function getUpdatedTranslationSqlArray()
     {
         $ignoreFields = array('id');
@@ -102,9 +101,7 @@ class MigrationsService
         $tableName = $this->entityManager->getConnection()->quoteIdentifier($tableName);
         $fieldNames = array_diff($fieldNames, $ignoreFields);
 
-
         $values = array();
-
 
         foreach ($entities as $entity) {
 
