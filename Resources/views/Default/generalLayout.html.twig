@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}KunstmaanTranslationbundle Admin UI{% endblock %}</title>
+        <style>
+            *, *:before, *:after {-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;color:#333;font-family:Arial,Verdana,sans-serif;font-size:12px;margin:0;padding:0;}
+            .container{margin:0 auto;padding:20px;width:1100px;}
+            .nav{margin:0 0 2em;padding:0;}
+            .nav li{display:inline-block;list-style-type:none;margin:0 10px 0 0;padding:0;zoom:1;}
+
+            table{border-collapse:collapse;border-spacing:0;margin:0 0 2em;max-width:100%;width:100%;}
+            th{text-align: left;}
+            table > thead > tr > th,table > tbody > tr > th,table > tfoot > tr > th,table > thead > tr > td,table > tbody > tr > td,table > tfoot > tr > td{border-top:1px solid #DDDDDD;line-height:1.42857;padding:8px;vertical-align:top;}
+            table > thead > tr > th{border-bottom:2px solid #DDDDDD;border-top:0 none;vertical-align:bottom;}
+
+            form div{margin:0 0 1em;}
+            form input,form textarea,form select{background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset;color:#555;display:block;font-size:12px;height:34px;line-height:1.42857;padding:6px 12px;vertical-align:middle;width:100%;}
+            form label{display:inline-block;font-weight:bold;margin:0 0 5px;}
+            form input{}
+            form textarea{height:auto;overflow:auto;}
+
+            .btn{-moz-user-select:none;background:#fff;border:1px solid #ccc;border-radius:4px;cursor:pointer;display:inline-block;font-size:12px;font-weight:normal;line-height:1.42857;margin-bottom:0;padding:6px 12px;text-align:center;vertical-align:middle;white-space:nowrap;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

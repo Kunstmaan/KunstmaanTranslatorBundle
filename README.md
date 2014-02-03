@@ -41,6 +41,26 @@ KunstmaanTranslatorBundle:
         _locale: %requiredlocales%
 ```
 
+For Symfony Profiler to work, you need to enable Twig's text extension.
+
+```PHP
+services:
+    twig.extension.text:
+         class: Twig_Extensions_Extension_Text
+         tags:
+             - { name: twig.extension }
+```
+
+If you don't have installed KunstmaanAdminBundle, you can still use this bundle, but then you need to add the following lines to your routing file
+
+```PHP
+KunstmaanTranslatorBundle:
+    resource: "@KunstmaanTranslatorBundle/Resources/config/routing_general.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: %locale%
+```
+
 Configuration
 ---
 
@@ -53,7 +73,7 @@ kunstmaan_translator:
 	cache_dir: 			%kernel.cache_dir%/translations
 	managed_locales:	[]
 	file_formats:		['yml', 'xliff']
-	
+
 ```
 
 * ```enabled``` : Enabled or disable the KunstmaanTranslatorBundle
