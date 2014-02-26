@@ -37,7 +37,7 @@
         "friendsofsymfony/user-bundle": "dev-master",
         "white-october/pagerfanta-bundle": "dev-master",
         "pagerfanta/pagerfanta": "dev-master",
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
         "psr-0": { "Kunstmaan\\TranslatorBundle": "" }
