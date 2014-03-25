@@ -28,16 +28,16 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "2.0.*",
         "kunstmaan/admin-bundle": "2.3.*",
-        "kunstmaan/adminlist-bundle": "2.3.*",
-        "phpunit/phpunit": "*"
+        "kunstmaan/adminlist-bundle": "2.3.*"
     },
     "require-dev": {
         "doctrine/data-fixtures": "1.0.*@dev",
-        "doctrine/doctrine-fixtures-bundle": "2.1.*@dev",
-        "nelmio/alice": "1.4.*@dev",
+        "doctrine/doctrine-fixtures-bundle": ">=2.1, <2.3",
+        "nelmio/alice": "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
         "white-october/pagerfanta-bundle": "dev-master",
-        "pagerfanta/pagerfanta": "dev-master"
+        "pagerfanta/pagerfanta": "dev-master",
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
         "psr-0": { "Kunstmaan\\TranslatorBundle": "" }
