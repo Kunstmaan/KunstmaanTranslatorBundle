@@ -51,8 +51,9 @@ class KunstmaanTranslatorExtension extends Extension
         $translator = $container->getDefinition('kunstmaan_translator.service.translator.translator');
         $this->registerTranslatorConfiguration($config, $container);
 
-        // overwrites everything
-        $translator->addMethodCall('addDatabaseResources', array());
+        // This seems to be what causes assetic dump to crash if there is no database connection?
+        // Remove this?
+        //$translator->addMethodCall('addDatabaseResources', array());
 
         $translator->addMethodCall('setFallbackLocales', array(array('en')));
 
