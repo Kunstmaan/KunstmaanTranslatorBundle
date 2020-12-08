@@ -1,6 +1,6 @@
 <?php
 
-namespace Kunstmaan\TranslatorBundle\Tests\Service\Importer;
+namespace Kunstmaan\TranslatorBundle\Tests\Service\Translator;
 
 use Kunstmaan\TranslatorBundle\Repository\TranslationRepository;
 use Kunstmaan\TranslatorBundle\Service\Translator\CacheValidator;
@@ -10,7 +10,7 @@ class CacheValidatorTest extends TestCase
 {
     private $cacheValidator;
 
-    private $cacheDir = __DIR__.'/../../app/cache';
+    private $cacheDir = __DIR__ . '/../../app/cache';
 
     public function setUp(): void
     {
