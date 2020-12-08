@@ -3,7 +3,7 @@
 namespace Kunstmaan\TranslatorBundle\Tests\Service\Migrations;
 
 use Kunstmaan\TranslatorBundle\Service\Migrations\MigrationsService;
-use Kunstmaan\TranslatorBundle\Tests\unit\WebTestCase;
+use Kunstmaan\TranslatorBundle\Tests\WebTestCase;
 
 class MigrationsServiceTest extends WebTestCase
 {

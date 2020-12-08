@@ -1,6 +1,6 @@
 <?php
 
-namespace Kunstmaan\TranslatorBundle\Tests\Service\Importer;
+namespace Kunstmaan\TranslatorBundle\Tests\Service\Translator;
 
 use Kunstmaan\TranslatorBundle\Repository\TranslationRepository;
 use Kunstmaan\TranslatorBundle\Service\Translator\CacheValidator;

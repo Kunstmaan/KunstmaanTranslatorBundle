@@ -2,7 +2,7 @@
 
 namespace Kunstmaan\TranslatorBundle\Tests\Service\Importer;
 
-use Kunstmaan\TranslatorBundle\Tests\unit\WebTestCase;
+use Kunstmaan\TranslatorBundle\Tests\WebTestCase;
 use Symfony\Component\Finder\Finder;
 
 class ImporterTest extends WebTestCase
